@@ -6,4 +6,4 @@ The Program is divided into 3 parts
 2. Detecting which bone is this
 3. Hosting the model
 
-The dataset was taken from Standford's MURA Dataset. The link for the official dataset is [Named Link](https://stanfordmlgroup.github.io/competitions/mura/ "Named link title") 
+The dataset was taken from Standford's MURA Dataset. The link for the official dataset is [here](https://stanfordmlgroup.github.io/competitions/mura/ "Named link title") 
