@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bone Abnormality Detection</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"
+    />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="contact-box" style="padding:0% !important;">
+        <div class="left">
+          {% if link == 'heat.jpg' %}
+          <img src="/static/heat.jpg" style="max-width: 80%;  height: auto; padding:0%">
+          {% else %} 
+          <img src="/static/left.jpg" style="max-width: 80%;  height: auto; padding:0%">
+          {% endif %}   
+        </div>
+        <div class="right">
+          <form action="/image" method="POST" enctype="multipart/form-data">
+            <h2 style="color: black">Bone Abnormality Detection</h2>
+            <label for="img"><h2>Select image:</h2></label>
+            <input type="file" id="img" name="img" accept="image/*" />
+            <input type="submit" />
+            {% if results == 'negative' %}
+            <h3 style="color: green">No Abnormality found in {{bone}}</h3>
+            {% else %}
+            <br>
+            {% endif %}
+            {% if results == 'positive' %}
+            <h3 style="color: red">Abnormality found in {{bone}}</h3>
+             {% else %}
+            {% endif %}
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
